@@ -33,6 +33,14 @@ const routes = [
         handler: (request, h) => {
             return 'Halaman tidak ditemukan';
         }
+    },
+    {
+        method: 'GET',
+        path: '/users/{username?}',
+        handler: (request, h) => {
+            const { username = 'Stranger' } = request.params;
+            return `Hello, ${username}`;
+        }
     }
 ];
 
